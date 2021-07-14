@@ -1,5 +1,5 @@
-class Ingredients < ActiveRecord::Base
-    has_many :recipe_ingredients
-    has_many :recipes, through: :recipe_ingredients
+class Ingredient < ActiveRecord::Base
+    belongs_to :recipe
+
   end
   

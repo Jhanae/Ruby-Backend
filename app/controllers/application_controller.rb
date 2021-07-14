@@ -14,11 +14,35 @@ class ApplicationController < Sinatra::Base
     200
   end
 
-  get "/hi" do 
-    { hello: "world" }.to_json
+  # method "URL" do
+  get "/recipes" do 
+    Recipe.all.to_json
   end
   
-  
-  
+  # end
+   get "/ingredients" do
+    Ingredient.all.to_json
+  end
 
+  post "/new_recipe" do 
+    puts params.inspect
+    recipe_params = params.select do |key|
+      ["name", "url", "country", "instructions"].include?(key)
+    end
+    recipe = Recipe.create(recipe_params)
+    recipe.to_json
+  end
+
+  patch "/recipes/:id" do 
+    recipe = Recipe.find(params[:id])
+    attrs_to_update = params.select{|k,v| ["name", "url", "country", "instructions"].include?(k)}
+    recipe.update(attrs_to_update)
+    recipe.to_json
+  end
+
+  delete "/recipes/:id" do 
+    recipe = Recipe.find(params[:id])
+    recipe.destroy
+    recipe.to_json
+  end
 end

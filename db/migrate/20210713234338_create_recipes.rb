@@ -5,6 +5,10 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.string :url
       t.string :country
       t.string :instructions
+      t.string :difficulty
+      t.string :description
+      t.string :image
     end
   end
+  
 end
