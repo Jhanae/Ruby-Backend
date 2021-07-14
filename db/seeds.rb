@@ -1,4 +1,5 @@
 # [Recipe, Ingredient].each{|m| m.destroy_all }
+
 recipe_data=[
     { 
     name:"Pupusas Revueltas",
@@ -75,10 +76,72 @@ recipe_data=[
      }
     ]
     recipe = recipe_data.map{|attributes| Recipe.create(attributes)}
-Ingredients = [
-    { 
-        ingredients: '10 oz Boneless, Skinless Chicken Breast, thinly sliced'
-    }    
+    
+Ingredients = 
+    [
+        {ingredients: ["3 cups masa harina (corn flour for making tortillas)",
+            "1 1/2 cups warm water1/2 teaspoon fine salt 1/2 cup refried beans", 
+            "optional 1 cup chicharrón (pork rind)", 
+            "optional Vegetable oil, for oiling hands and skillet",
+            "1 cup grated quesillo"] 
+        },
+        {ingredients:
+            ["10 oz Boneless, Skinless Chicken Breast, thinly sliced",
+            "1 Tbsp Light Thai Soy Sauce",
+            "1 Tbsp Sweet Dark Soy Sauce",
+            "1 Tbsp Light Soy Sauce",
+            "1/2 tsp Granulated / White Sugar",
+            "10 oz Fresh Wide Rice Noodles",
+            "10 oz Chinese Broccoli / Gai Lan, chopped"]
+        },
+        {ingredients:
+            ["1/3 cup oil (vegetable/canola/coconut, not olive oil)",
+            "6 medium-sized fresh plum/Roma tomatoes, chopped, OR a 400-gram tin of tomatoes",
+            "6 fresh, red poblano peppers (or 4 large red bell peppers), seeds discarded",
+            "3 medium-sized red onions (1 sliced thinly, 2 roughly chopped), divided",
+            "1/2 to 1 hot pepper, or to taste (yellow Scotch bonnets are my favourite)",
+            "3 tablespoons tomato paste",
+            "2 teaspoons (Caribbean/Jamaican-style) curry powder",
+            "1 teaspoon dried thyme",
+            "2 dried bay leaves",
+            "5 to 6 cups stock (vegetable, chicken, or beef) or water, divided",
+            "2 teaspoons unsalted butter (optional), divided",
+            "4 cups uncooked converted long-grain rice or golden sella basmati, rinsed",
+            "Salt, to taste",
+            "Black and white pepper, to taste",
+            "Extra: sliced onions, tomatoes"]
+        },
+        {ingredients:
+            ["3 pound(s) goat meat",
+            "2 tablespoon(s) Grace White Vinegar",
+            "2 tablespoon(s) curry powder",
+            "1 medium onion chopped",
+            "2 stalk(s) escallion chopped",
+            "4 clove(s) garlic chopped",
+            "1 teaspoon(s) ginger chopped",
+            "2 teaspoon(s) thyme chopped",
+            "1/2 whole scotch bonnet pepper chopped",
+            "1 teaspoon(s) black pepper",
+            "1 teaspoon(s) salt",
+            "1/4 cup(s) Grace Vegetable Oil",
+            "4 cup(s) boiling water",
+            "1 large Irish potato diced",
+            "1 medium carrot sliced",
+            "4 whole pimento berries crushed"] 
+        },
+        {ingredients:
+            ["2 large eggs and 2 large yolks, room temperature",
+            "1 ounce (about 1/3 packed cup) grated pecorino Romano, plus additional for serving",
+            "1 ounce (about 1/3 packed cup) grated Parmesan",
+            "Coarsely ground black pepper",
+            "1 tablespoon olive oil",
+            "3 ½ ounces of slab guanciale (see recipe)", 
+            "pancetta or bacon, sliced into pieces about 1/4 inch thick by 1/3 inch square",
+            "12 ounces spaghetti (about 3/4 box)"]
+        }
     ]
+
     ingredient = Ingredients.map{|attributes| Ingredient.create(attributes)}
+    
+      
 # Pry.start
