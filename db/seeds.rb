@@ -143,6 +143,3 @@ recipe_data=[
     ]
     ingredient = Ingredients.map{|attributes| Ingredient.create(attributes)}
     
-
-      
-# Pry.start

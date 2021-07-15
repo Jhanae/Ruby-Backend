@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
   post "/new_recipe" do 
     puts params.inspect
     recipe_params = params.select do |key|
-      ["name", "url", "country", "instructions", "ingredients"].include?(key)
+      ["name","url", "country", "instructions","difficulty", "description","image"].include?(key)
     end
     recipe = Recipe.create(recipe_params)
     recipe.to_json
@@ -55,7 +55,6 @@ class ApplicationController < Sinatra::Base
   delete "/recipes/:id" do 
     recipe = Recipe.find(params[:id])
     recipe.destroy
-    binding.pry
     recipe.to_json
   end
 end
