@@ -1,4 +1,6 @@
 # [Recipe, Ingredient].each{|m| m.destroy_all }
+Recipe.destroy_all
+Ingredient.destroy_all
 recipe_data=[
     { 
     name:"Pupusas Revueltas",

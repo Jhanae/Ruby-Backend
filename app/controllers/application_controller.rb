@@ -33,6 +33,17 @@ class ApplicationController < Sinatra::Base
     recipe.to_json
   end
 
+#   post "/new_recipe" do 
+#     recipe = Recipe.create(
+#       name: params[:name],
+#       url: params[:url],
+#       country: params[:country],
+#       instructions: params[:instructions],
+#       ingredients: params[:ingredients],
+#     )
+#     recipe.to_json
+# end
+
   patch "/recipes/:id" do 
     recipe = Recipe.find(params[:id])
     attrs_to_update = params.select{|k,v| ["name", "url", "country", "instructions"].include?(k)}
@@ -43,6 +54,7 @@ class ApplicationController < Sinatra::Base
   delete "/recipes/:id" do 
     recipe = Recipe.find(params[:id])
     recipe.destroy
+    binding.pry
     recipe.to_json
   end
 end
