@@ -17,6 +17,7 @@ class ApplicationController < Sinatra::Base
   # method "URL" do
   get "/recipes" do 
     Recipe.all.to_json
+    
   end
   
   # end
@@ -27,7 +28,7 @@ class ApplicationController < Sinatra::Base
   post "/new_recipe" do 
     puts params.inspect
     recipe_params = params.select do |key|
-      ["name", "url", "country", "instructions"].include?(key)
+      ["name", "url", "country", "instructions", "ingredients"].include?(key)
     end
     recipe = Recipe.create(recipe_params)
     recipe.to_json
