@@ -24,6 +24,15 @@ class ApplicationController < Sinatra::Base
    get "/ingredients" do
     Ingredient.all.to_json
   end
+  
+  post "/new_ingredient" do 
+    puts params.inspect
+    ingredient_params = params.select do |key|
+      ["ingredients"].include?(key)
+    end
+    ingredient = Ingredient.create(ingredient_params)
+    ingredient.to_json
+  end
 
   post "/new_recipe" do 
     puts params.inspect
